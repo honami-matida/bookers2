@@ -1,35 +1,31 @@
 <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-3'>
-        <!-- 編集リンクが未実装 -->
-        <%= render 'books/new', book: @book %>
+      <!-- 編集リンクが未実装 -->
+      <%= render 'books/new', book: @book %>
     </div>
     <div class='col-md-8 offset-md-1'>
-      <h2>Books</h2>
-      <!-- 投稿した書籍一覧表示を作成しましょう。 -->
+      <h2>Users</h2>
       <table class='table table-hover table-inverse'>
         <thead>
           <tr>
             <th></th>
-            <th>Title</th>
-            <th>Opinion</th>
+            <th>image</th>
+            <th>name</th>
             <th colspan="3"></th>
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% @users.each do |user| %>
           <tr>
             <th></th>
-            <th>
-              <%= link_to book_path(book.id) do %>
-                <%= book.title %>
-              <% end %>
-            </th>
-            <th><%= book.body %></th>
             <th></th>
+            <th><%= user.name %></th>
+            <th>
+              <%= link_to "Show", user_path(user.id) %>
+            </th>
           </tr>
            <% end %>
-        </tbody>
       </table>
     </div>
   </div>
