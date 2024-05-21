@@ -1,23 +1,30 @@
 <table class='table'>
   <h2>User info</h2>
         <tr>
-          <%= image_tag 'default-image.jpg' %> <!-- 固定値 -->
+          <%= image_tag @user.get_profile_image(100,100) %> <!-- 固定値 -->
         </tr>
         <tr>
           <th>name</th>
-          <th><%#= @user.name %></th> <!-- 固定値 -->
+          <th><%= user.name %></th> <!-- 固定値 -->
         </tr>
         <tr>
           <th>introduction</th>
-          <th><%#= @user.introduction %></th> <!-- 固定値 -->
+          <th><%= user.introduction %></th> <!-- 固定値 -->
         </tr>
 </table>
 
 <div class='row'>
-  <%#= link_to "プロフィール編集", edit_user_path(@user.id) %></p>
+  <div class="col-md">
+    <button type="button" class="btn btn-outline-secondary btn-block" >
+      <%= link_to edit_user_path(user.id), class: 'nav-link text-dark' do %>
+        <i class="fa-solid fa-user-gear"></i>
+      <% end %>
+    </button>
+  </div>
 </div>
 
-<%= form_with model: @book do |f| %>
+<h2>New book</h2>
+<%= form_with model: book do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
   <h4>Opinion</h4>
