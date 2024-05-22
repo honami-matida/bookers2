@@ -24,7 +24,11 @@
                 <%= @user.name %>
               <% end %>
             </th>
-            <th><%= @book.title %></th>
+            <th>
+              <%= link_to book_path(@book.id) do %>
+                <%= @book.title %>
+              <% end %>
+            </th>
             <th><%= @book.body %></th>
             <th>
               <% if @book.user == current_user %>
