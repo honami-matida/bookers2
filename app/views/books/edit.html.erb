@@ -21,7 +21,10 @@
 
 <% end %>
 
+<p><%= link_to "Show", book_path(@book) %></p>
+|
+<p><%= link_to "Back", books_path %></p>
+
 <% if @user == current_user.id %>
     <p><%= link_to "show", user_path(@user) %></p>
   <% end %>
-  |
